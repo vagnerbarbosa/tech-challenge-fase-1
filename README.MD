@@ -2,6 +2,14 @@
 
 ## Como rodar
 
+### Pré-requisitos
+
+- Python: Certifique-se de ter o Python instalado na versão 3.11 ou inferior.
+- Jupyter: O [Jupyter](https://docs.jupyter.org/pt-br/latest/install/notebook-classic.html) Notebook deve estar instalado e corretamente configurado nas variáveis de ambiente do Python.
+- Docker (opcional): Caso opte por executar via [Docker](https://docs.docker.com/engine/install/), garanta que o Docker esteja devidamente instalado e configurado em seu ambiente.
+
+### Passo a passo
+
 1. Clone o repositório
 2. Instale as dependências: `pip install --only-binary=:all: -r requirements.txt`
 3. Execute o notebook: `jupyter notebook Diabetes_Analysis.ipynb`
