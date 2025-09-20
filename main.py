@@ -1,7 +1,7 @@
-import preprocessing
-import visualization
-import modeling
-import evaluation
+from pipeline import preprocessing
+from pipeline import visualization
+from pipeline import modeling
+from pipeline import evaluation
 
 def main():
     # 1. Carregar e limpar dados
