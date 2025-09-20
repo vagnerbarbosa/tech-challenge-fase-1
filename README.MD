@@ -4,7 +4,7 @@
 
 ### Pré-requisitos
 
-- Python: Certifique-se de ter o Python instalado na versão 3.11 ou inferior.
+- Python: Certifique-se de ter o [Python](https://www.python.org/downloads/release/python-3119/) instalado na versão 3.11 ou inferior.
 - Jupyter: O [Jupyter](https://docs.jupyter.org/pt-br/latest/install/notebook-classic.html) Notebook deve estar instalado e corretamente configurado nas variáveis de ambiente do Python.
 - Docker (opcional): Caso opte por executar via [Docker](https://docs.docker.com/engine/install/), garanta que o Docker esteja devidamente instalado e configurado em seu ambiente.
 
