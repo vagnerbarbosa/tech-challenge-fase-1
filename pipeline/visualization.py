@@ -4,7 +4,7 @@ import seaborn as sns
 
 def plot_target_distribution(df):
     sns.countplot(x='Outcome', data=df)
-    plt.title('Distribuição de Diagnóstico (0=Não, 1=Sim)')
+    plt.title('Distribuição de Diagnóstico (0=Não Diabético, 1=Sim Diabético)')
     plt.show()
 
 def plot_histograms(df):

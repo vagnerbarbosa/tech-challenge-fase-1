@@ -1,3 +1,4 @@
+# TODO: Precisamos definir melhor o quais dados vamos avaliar. 
 from sklearn.metrics import accuracy_score, recall_score, f1_score, confusion_matrix, classification_report
 import matplotlib.pyplot as plt
 import seaborn as sns
