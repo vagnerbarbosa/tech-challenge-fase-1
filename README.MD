@@ -1,27 +1,82 @@
-# Diagnóstico de Diabetes com Machine Learning
+# 🧪 Diagnóstico de Diabetes com Machine Learning
 
-## Como rodar
+Este projeto utiliza técnicas de machine learning para prever o diagnóstico de diabetes com base em dados clínicos. A maneira **recomendada** de execução é via **Docker**, garantindo um ambiente isolado e livre de conflitos de dependências.
+
+---
+
+## 🚀 Como Executar com Docker (Recomendado)
+
+### ✅ Pré-requisitos
+
+- Ter o [Docker](https://docs.docker.com/engine/install/) instalado e funcionando corretamente.
+
+### ▶️ Passos
+
+1. Clone este repositório:
+   ```bash
+   git clone https://github.com/seu-usuario/seu-repositorio.git
+   cd seu-repositorio
+   ```
+
+2. Construa a imagem Docker:
+   ```bash
+   docker build -t diabetes-ml .
+   ```
+
+3. Execute o container:
+   ```bash
+   docker run -p 8888:8888 diabetes-ml
+   ```
+
+4. Acesse o Jupyter Notebook via navegador:
+   ```
+   http://localhost:8888
+   ```
+
+---
+
+## 💻 Execução Local (Alternativa)
 
 ### Pré-requisitos
 
-- Python: Caso queira rodar localmente, certifique-se de ter o [Python](https://www.python.org/downloads/release/python-3119/) instalado na versão 3.11 ou inferior.
-- Jupyter: Caso queira rodar localmente, o [Jupyter](https://docs.jupyter.org/pt-br/latest/install/notebook-classic.html) Notebook deve estar instalado e corretamente configurado nas variáveis de ambiente do Python.
-- Docker (Recomendado): Caso opte por executar via [Docker](https://docs.docker.com/engine/install/), garanta que o Docker esteja devidamente instalado e configurado em seu ambiente.
+- [Python 3.10 ou 3.11](https://www.python.org/downloads/)
+- [Jupyter Notebook](https://jupyter.org/install)
 
-### Passo a passo
+### Passos
 
-1. Clone o repositório
-2. Instale as dependências: `pip install --only-binary=:all: -r requirements.txt`
-3. Execute o notebook: `jupyter notebook Diabetes_Analysis.ipynb`
-4. Ou rode via Docker:
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/seu-usuario/seu-repositorio.git
+   cd seu-repositorio
+   ```
 
-```bash
-docker build -t diabetes-ml . && docker run -p 8888:8888 diabetes-ml
-```
+2. Instale as dependências:
+   ```bash
+   pip install --only-binary=:all: -r requirements.txt
+   ```
 
-## Dataset - [Link para download](https://www.kaggle.com/datasets/mathchi/diabetes-data-set/data) 
+3. Execute o Jupyter Notebook:
+   ```bash
+   jupyter notebook Diabetes_Analysis.ipynb
+   ```
 
-## Resultados - Accuracy: XX% - Recall: XX% - F1-score: XX%
+---
 
-## Importante
-Caso queira executar localmente, por questões de compatibilidade entre as versões das bibliotecas utilizadas, certifique-se de que o Python 3.10 ou 3.11 esteja instalado em seu ambiente.
+## 📊 Dataset
+
+- O dataset utilizado pode ser baixado [neste link do Kaggle](https://www.kaggle.com/datasets/mathchi/diabetes-data-set/data)
+
+---
+
+## 📈 Resultados Esperados
+
+- **Accuracy:** XX%
+- **Recall:** XX%
+- **F1-Score:** XX%
+
+---
+
+## ⚠️ Observações
+
+- O uso do Docker evita problemas de compatibilidade de bibliotecas e versões do Python.
+- Para execução local, garanta que a versão do Python seja **3.10 ou 3.11**, pois versões superiores podem causar erros de compatibilidade com algumas bibliotecas.
