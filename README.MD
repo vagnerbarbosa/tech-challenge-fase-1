@@ -37,12 +37,12 @@ Este projeto utiliza técnicas de machine learning para prever o diagnóstico de
 
 ## 💻 Execução Local (Alternativa)
 
-### Pré-requisitos
+### ✅ Pré-requisitos
 
 - [Python 3.10 ou 3.11](https://www.python.org/downloads/)
 - [Jupyter Notebook](https://jupyter.org/install)
 
-### Passos
+### ▶️ Passos
 
 1. Clone o repositório:
    ```bash
