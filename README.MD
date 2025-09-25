@@ -13,7 +13,7 @@
 1. Clone o repositório
 2. Instale as dependências: `pip install --only-binary=:all: -r requirements.txt`
 3. Execute o notebook: `jupyter notebook Diabetes_Analysis.ipynb`
-4. Ou rode via Docker:
+4. Ou rode via Docker (Recomendado):
 
 ```bash
 docker build -t diabetes-ml . && docker run -p 8888:8888 diabetes-ml
