@@ -1,3 +1,4 @@
+# 1. Módulo de Pré-Processamento
 import pandas as pd
 import numpy as np  # Adicione esta linha
 from sklearn.model_selection import train_test_split

@@ -1,3 +1,4 @@
+# 2. Funções de Visualização
 import matplotlib.pyplot as plt
 import seaborn as sns
 

@@ -16,8 +16,7 @@
 4. Ou rode via Docker:
 
 ```bash
-docker build -t diabetes-ml .
-docker run -p 8888:8888 diabetes-ml
+docker build -t diabetes-ml . && docker run -p 8888:8888 diabetes-ml
 ```
 
 ## Dataset - [Link para download](https://www.kaggle.com/datasets/mathchi/diabetes-data-set/data) 
