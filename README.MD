@@ -6,14 +6,14 @@
 
 - Python: Caso queira rodar localmente, certifique-se de ter o [Python](https://www.python.org/downloads/release/python-3119/) instalado na versão 3.11 ou inferior.
 - Jupyter: Caso queira rodar localmente, o [Jupyter](https://docs.jupyter.org/pt-br/latest/install/notebook-classic.html) Notebook deve estar instalado e corretamente configurado nas variáveis de ambiente do Python.
-- Docker (opcional): Caso opte por executar via [Docker](https://docs.docker.com/engine/install/), garanta que o Docker esteja devidamente instalado e configurado em seu ambiente.
+- Docker (Recomendado): Caso opte por executar via [Docker](https://docs.docker.com/engine/install/), garanta que o Docker esteja devidamente instalado e configurado em seu ambiente.
 
 ### Passo a passo
 
 1. Clone o repositório
 2. Instale as dependências: `pip install --only-binary=:all: -r requirements.txt`
 3. Execute o notebook: `jupyter notebook Diabetes_Analysis.ipynb`
-4. Ou rode via Docker (Recomendado):
+4. Ou rode via Docker:
 
 ```bash
 docker build -t diabetes-ml . && docker run -p 8888:8888 diabetes-ml
