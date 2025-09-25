@@ -14,8 +14,8 @@ Este projeto utiliza técnicas de machine learning para prever o diagnóstico de
 
 1. Clone este repositório:
    ```bash
-   git clone https://github.com/seu-usuario/seu-repositorio.git
-   cd seu-repositorio
+   git clone https://github.com/vagnerbarbosa/tech-challenge-fase-1.git
+   cd tech-challenge-fase-1
    ```
 
 2. Construa a imagem Docker:
