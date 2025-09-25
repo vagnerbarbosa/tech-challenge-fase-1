@@ -44,10 +44,10 @@ Este projeto utiliza técnicas de machine learning para prever o diagnóstico de
 
 ### ▶️ Passos
 
-1. Clone o repositório:
+1. Clone este repositório:
    ```bash
-   git clone https://github.com/seu-usuario/seu-repositorio.git
-   cd seu-repositorio
+   git clone https://github.com/vagnerbarbosa/tech-challenge-fase-1.git
+   cd tech-challenge-fase-1
    ```
 
 2. Instale as dependências:
