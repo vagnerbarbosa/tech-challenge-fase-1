@@ -76,6 +76,15 @@ Este projeto utiliza técnicas de machine learning para prever o diagnóstico de
 
 ---
 
+### 🧮 Interpretação das Métricas
+
+- **Acurácia:** Percentual de diagnósticos corretos.
+- **Recall (Sensibilidade):** Percentual de pacientes com diabetes corretamente identificados. Essencial para evitar diagnósticos falsos negativos.
+- **F1-score:** Equilíbrio entre precisão e recall, importante em casos de desbalanceamento de classes.
+- **Matriz de Confusão:** Permite visualizar detalhadamente os acertos e erros do modelo.
+
+---
+
 ## ⚠️ Observações
 
 - O uso do Docker evita problemas de compatibilidade de bibliotecas e versões do Python.

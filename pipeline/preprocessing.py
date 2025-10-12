@@ -7,12 +7,20 @@ from sklearn.preprocessing import StandardScaler
 def load_data(path):
     return pd.read_csv(path)
 
-def clean_data(df):
+def clean_data_median(df):
     cols_with_zero = ['Glucose', 'BloodPressure', 'SkinThickness', 'Insulin', 'BMI']
     for col in cols_with_zero:
         df[col] = df[col].astype(float)  
         df[col] = df[col].replace(0, np.nan)
     df.fillna(df.median(), inplace=True)
+    return df
+
+def clean_data_remove_invalid(df):
+    cols_with_zero = ['Glucose', 'BloodPressure', 'SkinThickness', 'Insulin', 'BMI']
+    for col in cols_with_zero:
+        df[col] = df[col].astype(float)
+        df[col] = df[col].replace(0, np.nan)
+    df = df.dropna()
     return df
 
 def split_and_scale(df):

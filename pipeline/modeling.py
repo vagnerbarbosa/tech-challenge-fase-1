@@ -1,4 +1,3 @@
-# TODO: Decidir o melhor(es) modelo(s).
 from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
 
