@@ -1,7 +1,5 @@
-from pipeline import preprocessing
-from pipeline import visualization
-from pipeline import modeling
-from pipeline import evaluation
+from pipeline import preprocessing, visualization, modeling, evaluation
+from pipeline.data_split import split_and_oversample  # NOVO
 
 def main():
     # 1. Carregar dados
@@ -15,17 +13,13 @@ def main():
     visualization.plot_histograms(df_ready)
     visualization.plot_correlation_matrix(df_ready)
 
-    # 4. Split dos dados prontos para modelagem
-    from sklearn.model_selection import train_test_split
-    X_train, X_test, y_train, y_test = train_test_split(
-        X_scaled, y, test_size=0.2, random_state=42, stratify=y
-    )
+    # 4. Split e Oversampling
+    X_train_res, X_test, y_train_res, y_test = split_and_oversample(X_scaled, y)
 
     # 5. Modelagem e avaliação
     models = modeling.get_models()
-    models = modeling.train_models(models, X_train, y_train)
+    models = modeling.train_models(models, X_train_res, y_train_res)
     evaluation.evaluate_models(models, X_test, y_test)
-    # Se quiser exportar o melhor modelo para uso futuro, implemente depois!
 
 if __name__ == "__main__":
     main()

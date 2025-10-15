@@ -6,3 +6,4 @@ seaborn==0.12.2
 shap==0.42.0
 jupyter==1.0.0
 xgboost
+imbalanced-learn
