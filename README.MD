@@ -85,7 +85,29 @@ Este projeto utiliza técnicas de machine learning para prever o diagnóstico de
 
 ---
 
+## Limitações do Modelo e do Dataset
+- O modelo foi treinado em dados públicos, que podem não representar toda a população.
+- Possível desbalanceamento entre classes (ex: mais negativos do que positivos).
+- Não foi realizada validação clínica direta.
+- O dataset não contém variáveis socioeconômicas ou contextuais relevantes.
+
+---
+
 ## ⚠️ Observações
 
 - O uso do Docker evita problemas de compatibilidade de bibliotecas e versões do Python.
 - Para execução local, garanta que a versão do Python seja **3.10 ou 3.11**, pois versões superiores podem causar erros de compatibilidade com algumas bibliotecas.
+
+---
+
+## Conformidade com a LGPD
+Este projeto utiliza apenas dados públicos e anonimizados, em conformidade com a Lei Geral de Proteção de Dados (LGPD).  
+Nenhuma informação pessoal identificável é processada.  
+Para uso em ambientes reais, recomenda-se revisão jurídica e anonimização rigorosa dos dados.
+
+---
+
+## Segurança e Ética dos Dados
+Todos os dados utilizados são públicos e anonimizados (Fonte: [Kaggle Diabetes Dataset](https://www.kaggle.com/datasets/mathchi/diabetes-data-set)).  
+O projeto segue boas práticas para evitar vazamento ou reidentificação, mesmo em ambiente local.  
+**Recomendação:** Em projetos reais, é imprescindível anonimizar informações sensíveis e aderir à [LGPD](https://www.gov.br/cidadania/pt-br/acesso-a-informacao/lgpd).
