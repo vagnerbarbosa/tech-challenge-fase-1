@@ -1,6 +1,11 @@
-# 🧪 Diagnóstico de Diabetes com Machine Learning
+# 🧪 Diagnóstico de Diabetes com Machine Learning: Comparação de Pipelines de Análise
 
-Este projeto utiliza técnicas de machine learning para prever o diagnóstico de diabetes com base em dados clínicos. A maneira **recomendada** de execução é via **Docker**, garantindo um ambiente isolado e livre de conflitos de dependências.
+Este projeto utiliza técnicas de machine learning para prever o diagnóstico de diabetes com base em dados clínicos, **comparando duas diferentes abordagens (Pipelines A e B) de pré-processamento, modelagem e avaliação**. A maneira **recomendada** de execução é via **Docker**, garantindo um ambiente isolado e livre de conflitos de dependências.
+
+O objetivo principal do **Notebook** (`Diabetes_Analysis.ipynb`) é:
+1.  Executar o **Pipeline A (Baseline/MLOps)**: Usa KNN Imputer e um conjunto de modelos clássicos.
+2.  Executar o **Pipeline B (Otimizado/Deep Dive)**: Adiciona **Feature Engineering**, remove features e inclui XGBoost, usando um `threshold` de 0.3 para priorizar o Recall.
+3.  **Comparar** detalhadamente as métricas de desempenho e a importância das *features* de ambas as abordagens.
 
 ---
 
@@ -13,25 +18,26 @@ Este projeto utiliza técnicas de machine learning para prever o diagnóstico de
 ### ▶️ Passos
 
 1. Clone este repositório:
-   ```bash
-   git clone https://github.com/vagnerbarbosa/tech-challenge-fase-1.git
-   cd tech-challenge-fase-1
-   ```
+   ```bash
+   git clone [https://github.com/vagnerbarbosa/tech-challenge-fase-1.git](https://github.com/vagnerbarbosa/tech-challenge-fase-1.git)
+   cd tech-challenge-fase-1
+   ```
 
 2. Construa a imagem Docker:
-   ```bash
-   docker build -t diabetes-ml .
-   ```
+   ```bash
+   docker build -t diabetes-ml .
+   ```
 
 3. Execute o container:
-   ```bash
-   docker run -p 8888:8888 diabetes-ml
-   ```
+   ```bash
+   docker run -p 8888:8888 diabetes-ml
+   ```
 
-4. Acesse o Jupyter Notebook via navegador:
-   ```
-   http://localhost:8888
-   ```
+4. Acesse o Jupyter Notebook via navegador e abra o arquivo `Diabetes_Analysis.ipynb`:
+   ```
+   http://localhost:8888
+   ```
+> **Instrução no Notebook:** Execute todas as células sequencialmente para rodar as duas esteiras (A e B) e gerar a comparação final.
 
 ---
 
@@ -45,49 +51,60 @@ Este projeto utiliza técnicas de machine learning para prever o diagnóstico de
 ### ▶️ Passos
 
 1. Clone este repositório:
-   ```bash
-   git clone https://github.com/vagnerbarbosa/tech-challenge-fase-1.git
-   cd tech-challenge-fase-1
-   ```
+   ```bash
+   git clone [https://github.com/vagnerbarbosa/tech-challenge-fase-1.git](https://github.com/vagnerbarbosa/tech-challenge-fase-1.git)
+   cd tech-challenge-fase-1
+   ```
 
-2. Instale as dependências:
-   ```bash
-   pip install --only-binary=:all: -r requirements.txt
-   ```
+2. Instale as dependências. O arquivo `requirements.txt` deve conter as bibliotecas dos dois pipelines (`pandas`, `numpy`, `scikit-learn`, `matplotlib`, `seaborn`, `imblearn`, `xgboost`, `kagglehub`, `shap`):
+   ```bash
+   pip install --only-binary=:all: -r requirements.txt
+   ```
 
-3. Execute o Jupyter Notebook:
-   ```bash
-   jupyter notebook Diabetes_Analysis.ipynb
-   ```
+3. Execute o Jupyter Notebook e abra o arquivo:
+   ```bash
+   jupyter notebook Diabetes_Analysis.ipynb
+   ```
 
 ---
 
 ## 📊 Dataset
 
-- O dataset utilizado pode ser baixado [neste link do Kaggle](https://www.kaggle.com/datasets/mathchi/diabetes-data-set/data)
+- O dataset utilizado é o **Pima Indians Diabetes Dataset**, carregado diretamente do Kaggle via `kagglehub` para ambos os pipelines.
+- Link da fonte: [Kaggle Diabetes Dataset](https://www.kaggle.com/datasets/mathchi/diabetes-data-set/data)
 
 ---
 
-## 📈 Resultados Esperados
+## 📈 Resultados Chave e Comparação de Pipelines
 
-- **Accuracy:** XX%
-- **Recall:** XX%
-- **F1-Score:** XX%
+O notebook se encerra com a Seção 4, que compara o desempenho dos modelos dos Pipelines A e B. Os resultados podem variar ligeiramente dependendo do ambiente, mas a tendência observada (o ponto central da análise) é a seguinte:
+
+| Métrica de Desempenho | Pipeline A (Baseline) | Pipeline B (Otimizado) |
+| :--- | :--- | :--- |
+| **Melhor Modelo (por Recall)** | DecisionTree | Random Forest |
+| **Melhor Recall Máximo** | $\approx 0.82 - 0.87$ | $\approx 0.89 - 0.91$ |
+| **Melhor F1-score** | $\approx 0.65 - 0.70$ | $\approx 0.70 - 0.72$ |
+
+### 🔍 Destaques da Comparação
+
+- **Recall (Sensibilidade):** O Pipeline B é projetado para maximizar o Recall (detectar mais casos positivos) através do uso de **Feature Engineering** e um **`threshold` de classificação mais baixo (0.3)**. Espera-se que o Pipeline B atinja um Recall superior, indicando maior sensibilidade para o diagnóstico.
+- **F1-score:** O Pipeline A pode apresentar um bom F1-score devido à imputação por KNN e à padronização robusta, enquanto o Pipeline B pode ter um **aumento no Recall à custa de uma ligeira queda na Precisão** (e, consequentemente, um F1-score potencialmente similar ou superior).
+- **Interpretabilidade:** O Pipeline B tem um conjunto de *features* diferentes, incluindo variáveis de interação (`idade_bmi`, `glucose_bmi`), cuja importância será visível nos gráficos de **Feature Importance e SHAP**, provando o valor das etapas de otimização.
 
 ---
 
 ### 🧮 Interpretação das Métricas
 
-- **Acurácia:** Percentual de diagnósticos corretos.
-- **Recall (Sensibilidade):** Percentual de pacientes com diabetes corretamente identificados. Essencial para evitar diagnósticos falsos negativos.
+- **Recall (Sensibilidade):** Percentual de pacientes com diabetes corretamente identificados. **Essencial** para evitar diagnósticos falsos negativos (FN).
+- **Precision (Precisão):** Percentual de previsões positivas que estão corretas. Reduz diagnósticos falsos positivos (FP).
 - **F1-score:** Equilíbrio entre precisão e recall, importante em casos de desbalanceamento de classes.
 - **Matriz de Confusão:** Permite visualizar detalhadamente os acertos e erros do modelo.
 
 ---
 
-## Limitações do Modelo e do Dataset
+## Limitações dos Modelos e do Dataset
 - O modelo foi treinado em dados públicos, que podem não representar toda a população.
-- Possível desbalanceamento entre classes (ex: mais negativos do que positivos).
+- Possível desbalanceamento entre classes (o problema é mitigado pelo uso de SMOTE em ambos os pipelines).
 - Não foi realizada validação clínica direta.
 - O dataset não contém variáveis socioeconômicas ou contextuais relevantes.
 
@@ -95,19 +112,10 @@ Este projeto utiliza técnicas de machine learning para prever o diagnóstico de
 
 ## ⚠️ Observações
 
-- O uso do Docker evita problemas de compatibilidade de bibliotecas e versões do Python.
-- Para execução local, garanta que a versão do Python seja **3.10 ou 3.11**, pois versões superiores podem causar erros de compatibilidade com algumas bibliotecas.
+- **Compatibilidade Python:** Para execução local, garanta que a versão do Python seja **3.10 ou 3.11**, pois versões superiores podem causar erros de compatibilidade com algumas bibliotecas de ML/Visualização.
+- O uso do Docker é a forma mais robusta de garantir um ambiente sem conflitos.
 
 ---
 
-## Conformidade com a LGPD
-Este projeto utiliza apenas dados públicos e anonimizados, em conformidade com a Lei Geral de Proteção de Dados (LGPD).  
-Nenhuma informação pessoal identificável é processada.  
-Para uso em ambientes reais, recomenda-se revisão jurídica e anonimização rigorosa dos dados.
-
----
-
-## Segurança e Ética dos Dados
-Todos os dados utilizados são públicos e anonimizados (Fonte: [Kaggle Diabetes Dataset](https://www.kaggle.com/datasets/mathchi/diabetes-data-set)).  
-O projeto segue boas práticas para evitar vazamento ou reidentificação, mesmo em ambiente local.  
-**Recomendação:** Em projetos reais, é imprescindível anonimizar informações sensíveis e aderir à [LGPD](https://www.gov.br/cidadania/pt-br/acesso-a-informacao/lgpd).
+## Conformidade e Ética dos Dados
+Este projeto utiliza apenas dados públicos
