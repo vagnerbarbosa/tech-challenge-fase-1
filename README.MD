@@ -88,7 +88,7 @@ O notebook se encerra com a Seção 4, que compara o desempenho dos modelos dos 
 ### 🔍 Destaques da Comparação
 
 - **Recall (Sensibilidade):** O Pipeline B é projetado para maximizar o Recall (detectar mais casos positivos) através do uso de **Feature Engineering** e um **`threshold` de classificação mais baixo (0.3)**. Espera-se que o Pipeline B atinja um Recall superior, indicando maior sensibilidade para o diagnóstico.
-- **F1-score:** O Pipeline A pode apresentar um bom F1-score devido à imputação por KNN e à padronização robusta, enquanto o Pipeline B pode ter um **aumento no Recall à custa de uma ligeira queda na Precisão** (e, consequentemente, um F1-score potencialmente similar ou superior).
+- **F1-score:** O Pipeline A pode apresentar um bom F1-score devido à imputação por Decision Tree e à padronização robusta, enquanto o Pipeline B pode ter um **aumento no Recall à custa de uma ligeira queda na Precisão** (e, consequentemente, um F1-score potencialmente similar ou superior).
 - **Interpretabilidade:** O Pipeline B tem um conjunto de *features* diferentes, incluindo variáveis de interação (`idade_bmi`, `glucose_bmi`), cuja importância será visível nos gráficos de **Feature Importance e SHAP**, provando o valor das etapas de otimização.
 
 ---
