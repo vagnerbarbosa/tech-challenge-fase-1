@@ -19,7 +19,7 @@ O objetivo principal do **Notebook** (`Diabetes_Analysis.ipynb`) é:
 
 1. Clone este repositório:
    ```bash
-   git clone [https://github.com/vagnerbarbosa/tech-challenge-fase-1.git](https://github.com/vagnerbarbosa/tech-challenge-fase-1.git)
+   git clone https://github.com/vagnerbarbosa/tech-challenge-fase-1.git
    cd tech-challenge-fase-1
    ```
 
@@ -52,7 +52,7 @@ O objetivo principal do **Notebook** (`Diabetes_Analysis.ipynb`) é:
 
 1. Clone este repositório:
    ```bash
-   git clone [https://github.com/vagnerbarbosa/tech-challenge-fase-1.git](https://github.com/vagnerbarbosa/tech-challenge-fase-1.git)
+   git clone https://github.com/vagnerbarbosa/tech-challenge-fase-1.git
    cd tech-challenge-fase-1
    ```
 
