@@ -102,7 +102,7 @@ O notebook se encerra com a Seção 4, que compara o desempenho dos modelos dos 
 
 ---
 
-## Limitações dos Modelos e do Dataset
+## ❌ Limitações dos Modelos e do Dataset
 - O modelo foi treinado em dados públicos, que podem não representar toda a população.
 - Possível desbalanceamento entre classes (o problema é mitigado pelo uso de SMOTE em ambos os pipelines).
 - Não foi realizada validação clínica direta.
