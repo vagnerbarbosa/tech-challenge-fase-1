@@ -122,8 +122,8 @@ O notebook se encerra com a Seção 4, que compara o desempenho dos modelos dos 
 - [Adriel Santos](https://github.com/AdrielCandido)
 - [João Marcos Simões](https://github.com/github)
 - [Leticia Nepomucena](https://github.com/LeticiaNepomucena)
-- [Lucas Silva] (https://github.com/lucfsilva)
-- [Vagner Barbosa] (https://github.com/vagnerbarbosa)
+- [Lucas Silva](https://github.com/lucfsilva)
+- [Vagner Barbosa](https://github.com/vagnerbarbosa)
 
 ---
 
