@@ -18,25 +18,25 @@ O objetivo principal do **Notebook** (`Diabetes_Analysis.ipynb`) é:
 ### ▶️ Passos
 
 1. Clone este repositório:
-   '''bash
+   ```bash
    git clone https://github.com/vagnerbarbosa/tech-challenge-fase-1.git
    cd tech-challenge-fase-1
-   '''
+   ```
 
 2. Construa a imagem Docker:
-   '''bash
+   ```bash
    docker build -t diabetes-ml .
-   '''
+   ```
 
 3. Execute o container:
-   '''bash
+   ```bash
    docker run -p 8888:8888 diabetes-ml
-   '''
+   ```
 
 4. Acesse o Jupyter Notebook via navegador e abra o arquivo `Diabetes_Analysis.ipynb`:
-   '''bash
+   ```bash
    http://localhost:8888
-   '''
+   ```
 > **Instrução no Notebook:** Execute todas as células sequencialmente para rodar as duas esteiras (A e B) e gerar a comparação final.
 
 ---
