@@ -117,5 +117,5 @@ O notebook se encerra com a Seção 4, que compara o desempenho dos modelos dos 
 
 ---
 
-## Conformidade e Ética dos Dados
+## 🔒 Conformidade e Ética dos Dados
 Este projeto utiliza apenas dados públicos
