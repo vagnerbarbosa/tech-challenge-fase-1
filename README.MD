@@ -2,6 +2,7 @@
 
 Este projeto utiliza técnicas de machine learning para prever o diagnóstico de diabetes com base em dados clínicos, **comparando duas diferentes abordagens (Pipelines A e B) de pré-processamento, modelagem e avaliação**. A maneira **recomendada** de execução é via **Docker**, garantindo um ambiente isolado e livre de conflitos de dependências.
 
+O Relatório técnico explicado se encontra no **Notebook** (`Diabetes_Analysis.ipynb`). 
 O objetivo principal do **Notebook** (`Diabetes_Analysis.ipynb`) é:
 1.  Executar o **Pipeline A (Baseline/MLOps)**: Usa KNN Imputer e um conjunto de modelos clássicos.
 2.  Executar o **Pipeline B (Otimizado/Deep Dive)**: Adiciona **Feature Engineering**, remove features e inclui XGBoost, usando um `threshold` de 0.3 para priorizar o Recall.
@@ -81,14 +82,14 @@ O notebook se encerra com a Seção 4, que compara o desempenho dos modelos dos 
 
 | Métrica de Desempenho | Pipeline A (Baseline) | Pipeline B (Otimizado) |
 | :--- | :--- | :--- |
-| **Melhor Modelo (por Recall)** | DecisionTree | Random Forest |
+| **Melhor Modelo (por Recall)** | KNeighbors  | Random Forest |
 | **Melhor Recall Máximo** | $\approx 0.82 - 0.87$ | $\approx 0.89 - 0.91$ |
 | **Melhor F1-score** | $\approx 0.65 - 0.70$ | $\approx 0.70 - 0.72$ |
 
 ### 🔍 Destaques da Comparação
 
 - **Recall (Sensibilidade):** O Pipeline B é projetado para maximizar o Recall (detectar mais casos positivos) através do uso de **Feature Engineering** e um **`threshold` de classificação mais baixo (0.3)**. Espera-se que o Pipeline B atinja um Recall superior, indicando maior sensibilidade para o diagnóstico.
-- **F1-score:** O Pipeline A pode apresentar um bom F1-score devido à imputação por Decision Tree e à padronização robusta, enquanto o Pipeline B pode ter um **aumento no Recall à custa de uma ligeira queda na Precisão** (e, consequentemente, um F1-score potencialmente similar ou superior).
+- **F1-score:** O Pipeline A pode apresentar um bom F1-score devido à imputação KNN e à padronização robusta, enquanto o Pipeline B pode ter um **aumento no Recall à custa de uma ligeira queda na Precisão** (e, consequentemente, um F1-score potencialmente similar ou superior).
 - **Interpretabilidade:** O Pipeline B tem um conjunto de *features* diferentes, incluindo variáveis de interação (`idade_bmi`, `glucose_bmi`), cuja importância será visível nos gráficos de **Feature Importance e SHAP**, provando o valor das etapas de otimização.
 
 ---
