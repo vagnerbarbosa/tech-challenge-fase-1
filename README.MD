@@ -6,9 +6,17 @@ O Relatório técnico explicado se encontra no **Notebook** (`Diabetes_Analysis.
 O objetivo principal do **Notebook** (`Diabetes_Analysis.ipynb`) é:
 1.  Executar o **Pipeline A (Baseline/MLOps)**: Usa KNN Imputer e um conjunto de modelos clássicos.
 2.  Executar o **Pipeline B (Otimizado/Deep Dive)**: Adiciona **Feature Engineering**, remove features e inclui XGBoost, usando um `threshold` de 0.3 para priorizar o Recall.
-3.  **Comparar** detalhadamente as métricas de desempenho e a importância das *features* de ambas as abordagens.
+3. Responder aos seguintes questionamentos:
+
+    1. Qual pipeline oferece melhor capacidade de detecção de diabetes (Recall)?
+    2. O ganho de performance justifica a complexidade adicional?
+    3. Quais features são mais importantes para o diagnóstico?
+    4. Como diferentes estratégias de pré-processamento impactam os resultados?
 
 ---
+## 🎞️ Vídeo Demonstração
+https://youtu.be/d62wPNKj1TU?si=My-jKimrJMECClqP
+
 
 ## 🚀 Como Executar com Docker (Recomendado)
 
@@ -115,6 +123,7 @@ O notebook se encerra com a Seção 4, que compara o desempenho dos modelos dos 
 
 - **Compatibilidade Python:** Para execução local, garanta que a versão do Python seja **3.10 ou 3.11**, pois versões superiores podem causar erros de compatibilidade com algumas bibliotecas de ML/Visualização.
 - O uso do Docker é a forma mais robusta de garantir um ambiente sem conflitos.
+- Caso não seja possível executar o projeto localmente o arquivo (`Diabetes_Analysis.ipynb`) é compátivel com [Colab Google](https://colab.google/).
 
 ---
 
