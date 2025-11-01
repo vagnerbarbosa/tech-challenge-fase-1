@@ -1,6 +1,6 @@
-from decision_tree_pipeline import exploracao
-from decision_tree_pipeline import pre_processamento
-from decision_tree_pipeline import modelagem
+from kneighbors_pipeline import exploracao
+from kneighbors_pipeline import pre_processamento
+from kneighbors_pipeline import modelagem
 
 def main():
     '''

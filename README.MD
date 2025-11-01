@@ -14,7 +14,7 @@ O objetivo principal do **Notebook** (`Diabetes_Analysis.ipynb`) é:
     4. Como diferentes estratégias de pré-processamento impactam os resultados?
 
 ---
-## 🎞️ Vídeo Demonstração
+## 🎞️ Vídeo de Demonstração
 https://youtu.be/d62wPNKj1TU?si=My-jKimrJMECClqP
 
 
